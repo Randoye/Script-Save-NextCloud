@@ -18,5 +18,5 @@ echo "The transfert of NextCloud Files has been done !"
 echo ""
 echo "Start the save function for the database"
 echo ""
-mysqldump --routines -u root -p Nextcloud > $filenamedb #Permet d'exporter toutes la base de données fonctions inclus
+mysqldump --routines -u root --password=pass  Nextcloud > $filenamedb #Permet d'exporter toutes la base de données fonctions inclus
 rclone copy $filenamedb save:$destpathdb # utilise Rclone pour envoyer la sauvegarde dans le dossier "db"
